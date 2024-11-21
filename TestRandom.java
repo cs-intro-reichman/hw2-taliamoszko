@@ -2,5 +2,29 @@
 public  class  TestRandom {
 	public static void main(String[]  args) {
 	    // Replace this comment with your code
+		int reps = Integer.parseInt(args[0]);
+		int bigger = 0;
+		int smaller = 0;
+
+		for(int i = 0; i < reps; i++){
+
+			double num = Math.random();
+			if(num > 0.5){
+				bigger++;	
+			} else {
+				smaller++;
+			}
+		}
+
+		System.out.println("> 0.5: " + bigger + "times");
+		System.out.println("<= 0.5: " + smaller + "times");
+
+		
+		if(smaller > 0){
+			double ratio = (double) bigger/smaller;
+			System.out.println("Ratio: " + ratio);
+		}else{
+			System.out.println("No values <= 0.5, ratio is undefined.");
+		}
 	}
 }
